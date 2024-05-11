@@ -1,0 +1,32 @@
+{% extends 'temp/maintenant.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW NOTIFICATION</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+            <th style="color: white">OWNER NAME</th>
+			<th style="color: white">NOTIFICATIN</th>
+			<th style="color: white">DATE</th>
+            <th style="color: white">TIME</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td style="color: white">{{ i.owner.owner_name}}</td>
+			<td style="color: white">{{ i.notification }}</td>
+            <td style="color: white">{{ i.date }}</td>
+            <td style="color: white">{{ i.time }}</td>
+			
+			
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
