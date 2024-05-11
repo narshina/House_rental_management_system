@@ -1,0 +1,30 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW RENT PAYMENT STATUS</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">NAME</th>
+			<th style="color: white">AMOUNT</th>
+			<th style="color: white">PAYMENT STATUS</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+            <td style="color: white">{{ i.tenant.tenant_name }}</td>
+{#			<td style="color: white">{{ i.name }}</td>#}
+			<td style="color: white">{{ i.amount }}</td>
+			<td style="color: white">{{ i.status }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
