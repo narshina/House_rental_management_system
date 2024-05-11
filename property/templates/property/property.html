@@ -1,0 +1,112 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1 class="text-primary">ADD PROPERTY</h1>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<table>
+                <tr>
+                    <td style="color: white">TYPE</td>
+                    <td><select name="ty" class="form-control" required="" style="width: 350px;height: 50px">
+                        <option>------------Select------------</option>
+                        {% for i in xx %}
+                            <option value="{{ i.type_id }}">{{ i.type }}</option>
+                        {% endfor %}
+                    </select> </td>
+                </tr>
+				<tr>
+					<td style="color: white">HOUSE NAME:</td>
+					<td><input type="text" name="house name" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">LOCATION:</td>
+					<td><input type="text" name="location" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">DISTRICT:</td>
+					<td><select name="district" required="" style="width: 350px;height: 50px">
+						<option>----SELECT----</option>
+						<option value="Kasargod">Kasargod</option>
+						<option value="Kannur">Kannur</option>
+						<option value="Wayanad">Wayanad</option>
+						<option value="Kozhikode">Kozhikode</option>
+						<option value="Malappuram">Malappuram</option>
+						<option value="Palakkad">Palakkad</option>
+						<option value="Thrissur">Thrissur</option>
+						<option value="Eranalulam">Eranakulam</option>
+						<option value="Idukki">Idukki</option>
+						<option value="Kottayam">Kottayam</option>
+						<option value="Alappuzha">Alappuzha</option>
+						<option value="Pathanamthitta">Pathanamthitta</option>
+						<option value="Kollam">Kollam</option>
+						<option value="Thiruvanathapuram">Thiruvanatapuram</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td style="color: white">LANDMAK:</td>
+					<td><input type="text" name="landmark" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">NUMBER OF BEDROOMS:</td>
+					<td><input type="number" name="number of bedroom" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">AREA OF HOUSE:</td>
+					<td><input type="text" name="area of house" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">IMAGE1</td>
+					<td><input type="file" name="image1" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">IMAGE2</td>
+					<td><input type="file" name="image2" required="" class="form-control" style="width: 350px;height: 50px"> </td>
+				</tr>
+				<tr>
+					<td style="color: white">SECURITY PAY:</td>
+					<td><input type="text" name="security pay" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">RENT AMOUNT:</td>
+					<td><input type="text" name="rent amount" required="" class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">STATUS:</td>
+					<td><select name="satus" required="" class="form-control" style="width: 350px;height: 50px">
+						<option>--SELECT STATUS--</option>
+						<option value="Availabe">Available</option>
+						<option value="Availabe">Not Availabel</option>
+						<option value="Availabe">Temporary Unavailable</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td style="color: white">CONTACT NUMBER:</td>
+					<td><input type="text" name="contact number"  class="form-control" required pattern="[0-9]{10}" minlength="10" maxlength="10" style="width: 350px;height: 50px"></td>
+				</tr>
+            <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="UPLOAD" class="btn-primary" style="width: 350px;height: 50px"></td>
+				</tr>
+				
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}

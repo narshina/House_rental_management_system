@@ -1,0 +1,54 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW PROPERTY</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">HOUSE NAME</th>
+			<th style="color: white">OWNER NAME</th>
+			<th style="color: white">LOCATION</th>
+			<th style="color: white">DISTRICT</th>
+			<th style="color: white">LANDMARK</th>
+			<th style="color: white">NUMBER OF BEDROOMS</th>
+			<th style="color: white">AREA OF HOUSE</th>
+			<th style="color: white">IMAGE1</th>
+            <th></th>
+			<th style="color: white">IMAGE2</th>
+            <th></th>
+			<th style="color: white">SECURITY PAY</th>
+			<th style="color: white">RENT AMOUNT</th>
+			<th style="color: white">STATUS</th>
+			<th style="color: white">CONTACT NUMBER</th>
+		</tr>
+        {% for i in w %}
+		<tr>
+			<td style="color: white">{{ i.house_name }}</td>
+			<td style="color: white">{{ i.owner.owner_name }}</td>
+			<td style="color: white">{{ i.location }}</td>
+			<td style="color: white">{{ i.district }}</td>
+			<td style="color: white">{{ i.landmark }}</td>
+			<td style="color: white">{{ i.number_of_bedrooms }}</td>
+			<td style="color: white">{{ i.area_of_house }}</td>
+			<td style="color: white"><img src="/static/{{ i.image1 }}" width="50" height="50"></td>
+            <td><a href="/static/{{ i.image1 }}">view</a> </td>
+			<td style="color: white"><img src="/static/{{ i.image2 }}" width="50" height="50"></td>
+            <td><a href="/static/{{ i.image2 }}">view</a> </td>
+			<td style="color: white">{{ i.security_payment }}</td>
+			<td style="color: white">{{ i.rent_amount }}</td>
+			<td style="color: white">{{ i.status }}</td>
+			<td style="color: white">{{ i.contact_no }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

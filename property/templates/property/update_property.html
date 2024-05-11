@@ -1,0 +1,99 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1 class="text-primary">UPDATE PROPERTY</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td style="color: white">HOUSE NAME:</td>
+					<td><input type="text" name="housename" value="{{ y.house_name }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+
+				<tr>
+					<td style="color: white">LOCATION:</td>
+					<td><input type="text" name="location" value="{{ y.location }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">DISTRICT:</td>
+                    <td><input type="text" name="district" value="{{ y.district }}"  class="form-control" style="width: 350px;height: 50px"> </td>
+{#						<option>----SELECT----</option>#}
+{#						<option value="Kasargod">Kasargod</option>#}
+{#						<option value="Kannur">Kannur</option>#}
+{#						<option value="Kannur">Wayanad</option>#}
+{#						<option value="Kannur">Kozhikode</option>#}
+{#						<option value="Kannur">Malappuram</option>#}
+{#						<option value="Kannur">Palakkad</option>#}
+{#						<option value="Kannur">Thrissur</option>#}
+{#						<option value="Kannur">Eranakulam</option>#}
+{#						<option value="Kannur">Idukki</option>#}
+{#						<option value="Kannur">Kottayam</option>#}
+{#						<option value="Kannur">Alappuzha</option>#}
+{#						<option value="Kannur">Pathanamthitta</option>#}
+{#						<option value="Kannur">Kollam</option>#}
+{#						<option value="Kannur">Thiruvanatapuram</option>#}
+{#				</select></td>#}
+				</tr>
+				<tr>
+					<td style="color: white">LANDMAK:</td>
+					<td><input type="text" name="landmark" value="{{ y.landmark }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">NUMBER OF BEDROOMS:</td>
+					<td><input type="number" name="numberbedroom" value="{{ y.number_of_bedrooms }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">AREA OF HOUSE:</td>
+					<td><input type="text" name="areahouse" value="{{ y.area_of_house }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+
+				<tr>
+					<td style="color: white">SECURITY PAY:</td>
+					<td><input type="text" name="securitypay" value="{{ y.security_payment }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">RENT AMOUNT:</td>
+					<td><input type="text" name="rentamount" value="{{ y.rent_amount }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+				<tr>
+					<td style="color: white">STATUS:</td>
+                    <td><input type="text" name="status" value="{{ y.status }}" class="form-control" style="width: 350px;height: 50px"></td>
+{#					<td><select name="satus">#}
+{#						<option>--SELECT STATUS--</option>#}
+{#						<option value="Availabe">Available</option>#}
+{#						<option value="Availabe">Not Availabel</option>#}
+{#						<option value="Availabe">Temporary Unavailable</option>#}
+{#					</select></td>#}
+				</tr>
+				<tr>
+					<td style="color: white">CONTACT NUMBER:</td>
+					<td><input type="text" name="contactnumber" value="{{ y.contact_no }}"  class="form-control" style="width: 350px;height: 50px"></td>
+				</tr>
+                <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="UPDATE" class="btn-primary" style="width: 350px;height: 50px"></td>
+				</tr>
+				
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}
