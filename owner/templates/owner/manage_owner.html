@@ -1,0 +1,56 @@
+{% extends 'temp/mainadmin.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">MANAGE OWNER</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">NAME</th>
+			<th style="color: white">AGE</th>
+			<th style="color: white">GENDER</th>
+			<th style="color: white">HOUSENAME</th>
+			<th style="color: white">LANDMARK</th>
+			<th style="color: white">DISTRICT</th>
+			<th style="color: white">PINCODE</th>
+			<th style="color: white">MOBILE NUMBER</th>
+			<th style="color: white">EMAIL ID</th>
+			<th style="color: white">ID PROOF</th>
+            <th></th>
+			<th style="color: white">STATUS</th>
+		</tr>
+        {% for i in x %}
+		<tr style="color: white">
+			<td style="color: white">{{ i.owner_name }}</td>
+			<td style="color: white">{{ i.age }}</td>
+			<td style="color: white">{{ i.gender }}</td>
+			<td style="color: white">{{ i.house_name }}</td>
+			<td style="color: white">{{ i.landmark }}</td>
+			<td style="color: white">{{ i.district }}</td>
+			<td style="color: white">{{ i.pincode }}</td>
+			<td style="color: white">{{ i.mob_no }}</td>
+			<td style="color: white">{{ i.email_id }}</td>
+			<td style="color: white"><img src="/static/{{ i.id_proof }}" width="50" height="50"></td>
+        <td><a href="/static/{{ i.id_proof }}">view</a> </td>
+			<td>{{ i.status }}</td>
+            {% if i.status == 'approved' %}
+            <td></td>
+            {% else %}
+			<td><a href="/owner/apprvv/{{ i.owner_id }}" class="btn btn-primary">Approve</a></td>
+            {% endif %}
+			<td><a href="/owner/reject/{{ i.owner_id }}" class="btn btn-primary">Reject</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
