@@ -1,0 +1,34 @@
+{% extends 'temp/mainhome.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>View feedback</title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW FEEDBACK </h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">House name</th>
+			<th style="color: white">Feedback</th>
+			<th style="color: white">Date</th>
+			<th style="color: white">Time</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td style="color: white">{{ i.house.house_name }}</td>
+			<td style="color: white">{{ i.feedback }}</td>
+			<td style="color: white">{{ i.date }}</td>
+			<td style="color: white">{{ i.time }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+
+{% endblock %}
