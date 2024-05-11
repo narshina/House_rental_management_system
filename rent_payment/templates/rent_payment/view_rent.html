@@ -1,0 +1,31 @@
+{% extends 'temp/maintenant.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW RENT AMOUNT</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+{#			<th>HOUSE NAME</th>#}
+			<th style="color: white">OWNER NAME</th>
+			<th style="color: white">RENT AMOUNT</th>
+			<th style="color: white">DUE DATE</th>
+		</tr>
+        {% for i in x %}
+		<tr style="color: white">
+{#			<td></td>#}
+			<td style="color: white">{{ i.owner.owner_name }}</td>
+			<td style="color: white">{{ i.rent_amount }}</td>
+			<td style="color: white">{{ i.due_date }}</td>
+        <td><a href="/pay_rent/post_rent/{{ i.add_rent_id }}/{{ i.owner_id }}" class="btn btn-primary">PAY</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

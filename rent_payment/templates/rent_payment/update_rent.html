@@ -1,0 +1,28 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">UPDATE RENT PAYMENT</h1>
+	<table border="2" class="table table-striped">
+		<tr style="color: white">
+			<th>HOUSE NAME</th>
+			<th style="color: white">AMOUNT</th>
+		</tr>
+        {% for i in y %}
+		<tr>
+			<td style="color: white">{{ i.house.house_name }}</td>
+			<td style="color: white">{{ i.rent_amount}}</td>
+			<td><a href="/rent_payment/add_rent/{{ i.add_rent_id }}" class="btn btn-primary">UPDATE</a></td>
+		</tr>
+
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">ADD SECURITY PAYMENT</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">HOUSE NAME</th>
+            <th style="color: white">TENANT NAME</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td style="color: white">{{ i.house.house_name }}</td>
+            <td style="color: white">{{ i.tenant.tenant_name }}</td>
+			<td><a href="/security_payment/post_security/{{ i.tenant_id }}/{{ i.house_id }}" class="btn btn-primary">Add Security Pay</a>
+			</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

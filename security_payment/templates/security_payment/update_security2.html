@@ -1,0 +1,38 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1 class="text-primary">UPDATE SECURITY PAYMENT</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+                <tr>
+					<td style="color: white">AMOUNT:</td>
+					<td><input type="text" name="housename"  class="form-control" value="{{ x.amount }}" style="width: 350px;height: 50px"></td>
+				</tr>
+                <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+                 <tr>
+                    <td></td><td></td>
+                </tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="UPDATE" class="btn-primary" style="width: 350px;height: 50px" ></td>
+				</tr>
+			</table>
+			
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}

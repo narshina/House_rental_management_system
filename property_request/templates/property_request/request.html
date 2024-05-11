@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1>View request for a property</h1>
+	<table border="2">
+		<tr>
+			<th>HOUSE NAME</th>
+			<th>OWNER NAME</th>
+{#			<th>REQUIRED YEAR</th>#}
+{#			<th>REQUIRED MONTH</th>#}
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.house.house_name}}</td>
+			<td>{{ i.house.owner_name }}</td>
+{#			<td>{{ i.required_year }}</td>#}
+{#			<td>{{ i.required_month }}</td>#}
+{#			<td><a href="{% url 'req' idd=i.request_id %}">Maintanance request</a>#}
+			</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>

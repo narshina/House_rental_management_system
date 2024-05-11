@@ -1,0 +1,29 @@
+{% extends 'temp/maintenant.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW SECURITY PAYMENT</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+            <th style="color: white">OWNER NAME</th>
+			<th style="color: white">AMOUNT</th>
+			<th style="color: white">DUE DATE</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+        <td style="color: white">{{ i.owner.owner_name }}</td>
+			<td style="color: white">{{ i.amount }}</td>
+			<td style="color: white">{{ i.duedate }}</td>
+			<td><a href="/pay_security/post_security/{{ i.add_security_id }}/{{ i.owner_id }}" class="btn btn-primary">PAY</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

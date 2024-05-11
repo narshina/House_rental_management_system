@@ -1,0 +1,52 @@
+{% extends 'temp/mainowner.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h1 class="text-primary">VIEW REQUEST FOR A PROPERTY</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+			<th style="color: white">HOUSE NAME</th>
+{#			<th>OWNER NAME</th>#}
+            <th style="color: white">NAME</th>
+            <th style="color: white">MOBILE NUMBER</th>
+            <th style="color: white">EMAIL ID</th>
+            <th style="color: white">ID PROOF</th>
+            <th></th>
+            <th style="color: white">PROFESSIONAL ID</th>
+            <th></th>
+			<th style="color: white">REQUIRED YEAR</th>
+			<th style="color: white">REQUIRED MONTH</th>
+            <th style="color: white">DATE</th>
+            <th style="color: white">TIME</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td style="color: white">{{ i.house.house_name }}</td>
+{#			<td></td>#}
+            <td style="color: white">{{ i.tenant.tenant_name }}</td>
+            <td style="color: white">{{ i.tenant.mob_no }}</td>
+            <td style="color: white">{{ i.tenant.email_id }}</td>
+{#            <td><a href="{{ i.tenant.id_proof }}"></a></td>#}
+            <td style="color: white"><img src="/static/{{ i.tenant.id_proof }}" height="100" width="100"></td>
+            <td><a href="/static/{{ i.tenant.id_proof }}">view</a> </td>
+            <td style="color: white"><img src="/static/{{ i.tenant.professional_id }}" height="100" width="100"></td>
+            <td><a href="/static/{{ i.tenant.professional_id }}">view</a> </td>
+			<td style="color: white">{{ i.required_year }}</td>
+			<td style="color: white">{{ i.required_month }}</td>
+            <td style="color: white">{{ i.date }}</td>
+            <td style="color: white">{{ i.time }}</td>
+			<td><a href="/property_request/reply_proprqst/{{ i.request_id }}" class="btn btn-primary">Reply</a>
+            <td><a href="/property_request/dltttttt/{{ i.request_id }}" class="btn btn-primary">Delete</a></td>
+			</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
