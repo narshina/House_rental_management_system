@@ -1,0 +1,52 @@
+{% extends 'temp/ownerhome.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<center>
+	<h1>MANAGE TENANT</h1>
+	<table border="2">
+		<tr>
+			<th>NAME</th>
+			<th>AGE</th>
+			<th>GENDER</th>
+            <th>MARITAL STATUS</th>
+			<th>HOUSENAME</th>
+			<th>LANDMARK</th>
+			<th>DISTRICT</th>
+			<th>PINCODE</th>
+			<th>MOBILE NUMBER</th>
+			<th>EMAIL ID</th>
+			<th>ID PROOF
+            <th>PROFESSIONAL ID</th>
+			<th>STATUS</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.tenant_name }}</td>
+			<td>{{ i.age }}</td>
+			<td>{{ i.gender }}</td>
+            <td>{{ i.marriage }}</td>
+			<td>{{ i.house_name }}</td>
+			<td>{{ i.landmark }}</td>
+			<td>{{ i.district }}</td>
+			<td>{{ i.pincode }}</td>
+			<td>{{ i.mob_no }}</td>
+			<td>{{ i.email_id }}</td>
+			<td>{{ i.id_proof }}</td>
+            <td>{{ i.professional_id }}</td>
+			<td>{{ i.status }}</td>
+            <td><a href="/tenant/ approve/{{ i.tenant_id }}" class="btn btn-primary" >Approve</a></td>
+            <td><a href="/tenant/ reject/{{ i.tenant_id }}" >Reject</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
